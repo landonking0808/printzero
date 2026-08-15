@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrintZero Studio — Designed here. Printed on demand.</title>
+<meta name="description" content="PrintZero Studio is a print-on-demand shop selling niche graphic designs across apparel, mugs, totes, and home goods. No inventory. No upfront capital. Designed by us, printed per order.">
+<style>
+  :root {
+    --ink: #111418;
+    --paper: #faf8f4;
+    --accent: #d94f2c;
+    --muted: #6b6b6b;
+    --rule: #e6e2da;
+    --soft: #f1ede4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  header.site {
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0;
+    background: var(--paper);
+  }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand .dot { color: var(--accent); }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  nav a:hover { color: var(--accent); }
+
+  .hero {
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  h1.headline {
+    font-size: 56px;
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  p.subhead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 680px;
+    margin: 0 0 36px;
+  }
+  .tagline {
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover { background: var(--accent); color: #fff; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2.section {
+    font-size: 36px;
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+  p.lede {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 0 48px;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+  @media (max-width: 760px) {
+    .how-grid { grid-template-columns: 1fr; }
+    h1.headline { font-size: 38px; }
+    h2.section { font-size: 28px; }
+    .hero { padding: 64px 0 48px; }
+  }
+  .step .num {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .step h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+  .step p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .objection {
+    background: var(--soft);
+    padding: 28px 30px;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 18px;
+  }
+  .objection h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .objection p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .objection em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 36px;
+  }
+  @media (max-width: 760px) {
+    .categories { grid-template-columns: repeat(2, 1fr); }
+  }
+  .cat {
+    border: 1px solid var(--rule);
+    padding: 28px 20px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  footer.site {
+    padding: 40px 0 56px;
+    background: var(--soft);
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer .brand { display: inline-block; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#" class="brand">PrintZero<span class="dot">.</span>Studio</a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#objections">FAQ</a>
+      <a href="#shop">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Print-on-demand &middot; No inventory</div>
+    <h1 class="headline">PrintZero Studio</h1>
+    <p class="tagline"><em>Designed here. Printed on demand.</em></p>
+    <p class="subhead">
+      A small, curated shop for niche graphic designs on apparel, mugs, totes, and home goods.
+      Every piece is made by a fulfillment partner only after you order it — so there is no
+      inventory, no upfront production run, and no working capital locked up waiting for a buyer.
+    </p>
+    <div class="cta-row">
+      <a href="#shop" class="btn btn-primary">Browse the shop</a>
+      <a href="#how" class="btn btn-ghost">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="wrap">
+    <h2 class="section">What you can buy</h2>
+    <p class="lede">A focused catalog of original designs, available on the products people actually wear and use.</p>
+    <div class="categories">
+      <div class="cat">Apparel</div>
+      <div class="cat">Mugs</div>
+      <div class="cat">Totes</div>
+      <div class="cat">Home Goods</div>
+    </div>
+    <p style="margin-top:36px;color:var(--muted);font-size:15px;">
+      <em>Note: the live catalog is still being assembled — product photos, pricing, and SKUs are pending.
+      What you see above is the categories the venture will stock, not fake listings.</em>
+    </p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="section">How PrintZero Studio works</h2>
+    <p class="lede">
+      The mechanics are deliberately simple. We hold the designs and the storefront;
+      a vetted fulfillment partner holds the printing equipment and the warehouse.
+      Nothing is printed until a real order comes in.
+    </p>
+    <div class="how-grid">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>We design</h3>
+        <p>
+          Original, niche-flavored graphics are produced here and attached to a catalog of
+          apparel, mugs, totes, and home goods. No mass-market bestsellers, no licensed IP —
+          just designs with a point of view.
+        </p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>You order</h3>
+        <p>
+          Browse the shop, pick a design and a product, and check out. The retail price covers
+          the per-unit production cost the fulfillment partner charges, plus a margin that
+          keeps the studio running.
+        </p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>They print & ship</h3>
+        <p>
+          Only after your order is paid does a print-on-demand partner — using direct-to-garment
+          printing, dye-sublimation, or similar — produce the physical item and ship it to you.
+          No boxes sit in a warehouse waiting for someone to want them.
+        </p>
+      </div>
+    </div>
+    <p style="margin-top:36px;color:var(--muted);font-size:16px;max-width:720px;">
+      The economic point of the model: there is no inventory lock-up. Cash isn't committed to
+      stock that might not sell. If a design doesn't sell, the cost is the design time — not a
+      pallet of unsold t-shirts.
+    </p>
+  </div>
+</section>
+
+<section id="objections">
+  <div class="wrap">
+    <h2 class="section">Things you might reasonably be wondering</h2>
+    <p class="lede">
+      If you've never bought from a print-on-demand shop before, three questions tend to come up
+      before the first order. Here are honest answers.
+    </p>
+
+    <div class="objection">
+      <h3>"Isn't print-on-demand quality worse than a normal shirt?"</h3>
+      <p>
+        Modern direct-to-garment and sublimation printing is genuinely good — the prints hold up to
+        washing when the right process is used and the blanks aren't garbage. The honest caveat is
+        that quality varies by fulfillment partner and by blank (the unprinted product). That's why
+        this studio sticks to vetted partners and a tight product set rather than racing to the
+        cheapest possible blank.
+      </p>
+    </div>
+
+    <div class="objection">
+      <h3>"Why is the price higher than the $8 tee at a big box store?"</h3>
+      <p>
+        The big-box $8 tee exists because someone committed capital to thousands of units in
+        advance, gambled on selling them, and amortized that risk across volume. <em>PrintZero Studio</em>
+        doesn't carry that gamble — every unit is produced on demand. A higher per-unit price
+        funds the per-order production cost, the design work, and a small margin; it's the
+        explicit tradeoff for zero inventory.
+      </p>
+    </div>
+
+    <div class="objection">
+      <h3>"How long does shipping take?"</h3>
+      <p>
+        Production happens after the order, so the total time-to-doorstep is longer than
+        pulling a pre-made item off a shelf and shipping it from a domestic warehouse — usually
+        a few business days of production plus standard shipping. Because production and
+        shipping are run by the same partner, the path is more predictable than dropshipping
+        across multiple suppliers.
+      </p>
+    </div>
+
+    <div class="objection">
+      <h3>"What if I want a refund or the item is wrong?"</h3>
+      <p>
+        Standard return and reprint policy applies: damaged or misprinted items get a reprint
+        or refund at our cost; buyer-remorse returns are accepted per the policy on the shop
+        page. We treat fulfillment mistakes as our responsibility, not yours.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <a href="#" class="brand">PrintZero<span class="dot">.</span>Studio</a>
+    <div>Designed here. Printed on demand.</div>
+    <div style="margin-top:12px;font-size:13px;">&copy; 2026 PrintZero Studio. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
